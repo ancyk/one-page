@@ -82,4 +82,20 @@
         }, 1000, 'swing');
     });
     
+    // podmiana koloru logo po najechaniu
+    $('.img-logo').on('mouseover', 'img', function() {
+        $logoCol = (this.getAttribute('src')).substr(-5,1);
+        $logoSrc = (this.getAttribute('src')).slice(0,-5);
+        $logoExt = (this.getAttribute('src')).substr(-4);
+        this.setAttribute('src', $logoSrc + 'Y' + $logoExt);
+    });
+    
+    // powrót do podstawowego koloru loga
+    $('.img-logo').on('mouseout', 'img', function() {
+        $logoCol = (this.getAttribute('src')).substr(-5,1);
+        $logoSrc = (this.getAttribute('src')).slice(0,-5);
+        $logoExt = (this.getAttribute('src')).substr(-4);
+        this.setAttribute('src', $logoSrc + 'G' + $logoExt);
+    });
+    
 })();
