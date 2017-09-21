@@ -40,12 +40,12 @@ nav {
     left: 0;
     top: 0;
     box-shadow: $shadow;
-    transition: all 500ms ease-in 50ms;
+    transition: $transition;
     .img-logo {
         @extend .div-flex;
         justify-content: flex-start;
         img {
-            transition: all 500ms ease-in 50ms;
+            transition: $transition;
             max-height: 6.5rem;
             padding: 2rem .5rem;
             opacity: 0.9;
@@ -61,7 +61,7 @@ nav {
             box-sizing: border-box;
             padding: 3rem 1.5rem;
             text-align: center;
-            transition: all 500ms ease-in 50ms;
+            transition: $transition;
             &:hover {
                 color: $yellow;
                 box-shadow: $shadow;
@@ -115,5 +115,31 @@ nav {
     bottom: 2rem;
     img {
         height: 4rem;
+    }
+}
+
+// stopka
+footer {
+    padding-bottom: 3rem;
+    background-color: $gray;
+    color: #FEFEFE;
+    text-align: center;
+    .div-flex {
+        padding: 2rem 10rem 1rem 10rem;
+        a {
+            text-decoration: none;
+            color: inherit;
+            font-size: 1.1rem;
+            padding: 1rem;
+            transition: $transition;
+            &:hover {
+                color: $yellow;
+            }
+        }
+    }
+    p {
+        line-height: 2rem;
+        font-size: .9rem;
+        font-weight: lighter;
     }
 }

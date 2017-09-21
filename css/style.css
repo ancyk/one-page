@@ -142,4 +142,24 @@ nav {
   #btn-up img {
     height: 4rem; }
 
+footer {
+  padding-bottom: 3rem;
+  background-color: #393C45;
+  color: #FEFEFE;
+  text-align: center; }
+  footer .div-flex, footer nav .img-logo, nav footer .img-logo {
+    padding: 2rem 10rem 1rem 10rem; }
+    footer .div-flex a, footer nav .img-logo a, nav footer .img-logo a {
+      text-decoration: none;
+      color: inherit;
+      font-size: 1.1rem;
+      padding: 1rem;
+      transition: all 500ms ease-in 50ms; }
+      footer .div-flex a:hover, footer nav .img-logo a:hover, nav footer .img-logo a:hover {
+        color: #D29E30; }
+  footer p {
+    line-height: 2rem;
+    font-size: .9rem;
+    font-weight: lighter; }
+
 /*# sourceMappingURL=style.css.map */
