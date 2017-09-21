@@ -121,6 +121,11 @@ nav {
     padding: 1.2rem; }
     .nav-scroll .link-up div:hover {
       background-color: #393C45; }
+  .nav-scroll .current {
+    color: #D29E30;
+    box-shadow: 0.05rem 0.1rem 0.3rem #393C45;
+    background-color: #393C45;
+    transition: background-color 400ms ease-in 100ms; }
 
 .content {
   padding: 5rem 10rem;
@@ -137,7 +142,7 @@ nav {
 
 #btn-up {
   position: fixed;
-  right: 2rem;
+  right: -10rem;
   bottom: 2rem; }
   #btn-up img {
     height: 4rem; }

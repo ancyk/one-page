@@ -1,0 +1,6 @@
+@mixin link-current() {
+    color: $yellow;
+    box-shadow: $shadow;
+    background-color: $gray;
+    transition: background-color 400ms ease-in 100ms;
+}

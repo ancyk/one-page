@@ -89,6 +89,7 @@ nav {
             &:hover { background-color: $gray; }
         }
     }
+    .current { @include link-current(); }
 }
 
 // wygląd zawartości tekstowej
@@ -111,7 +112,7 @@ nav {
 // przycisk - do góry
 #btn-up {
     position: fixed;
-    right: 2rem;
+    right: -10rem;
     bottom: 2rem;
     img {
         height: 4rem;
