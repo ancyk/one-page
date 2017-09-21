@@ -13,7 +13,7 @@ body, html {
 }
 
 // efekt parallax CSS
-.tlo1 { background-image: url('../img/011.jpg'); }
+.tlo1 { background-image: url('../img/01.jpg'); }
 .tlo2 { background-image: url('../img/02.jpg'); }
 .tlo3 { background-image: url('../img/03.jpg'); }
 .tlo4 { background-image: url('../img/04.jpg'); }
@@ -71,6 +71,7 @@ nav {
     }
 }
 
+// desktopowy pasek nawigacji - scroll
 .nav-scroll {
     height: 4.5rem;
     background: rgba(255,255,255,.7);
@@ -90,9 +91,29 @@ nav {
     }
 }
 
+// wygląd zawartości tekstowej
+.content {
+    padding: 5rem 10rem;
+    line-height: 1.7rem;
+    text-align: justify;
+    h2 {
+        font-size: 4rem;
+        color: $yellow;
+        text-shadow: $shadow;
+        margin-bottom: 3rem;
+        margin-top: 2rem;
+    }
+    p {
+        margin-top: 1.5rem;
+    }
+}
 
-
-
-
-
-
+// przycisk - do góry
+#btn-up {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    img {
+        height: 4rem;
+    }
+}
