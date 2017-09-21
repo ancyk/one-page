@@ -12,7 +12,16 @@
             height: $window.height()
         });
     }
-    refreshImgHeight();
+    refreshImgHeight();    
+    
+    // zmiana wyglądu menu
+    function changeMenuStyle() {
+        if ($winScroll >= 150) {
+            $('nav').addClass('nav-scroll');
+        } else {
+            $('nav').removeClass('nav-scroll');
+        }
+    }
     
     // zmiana wysokości obrazka przy
     // każdej zmianie wielkości okna
@@ -46,13 +55,6 @@
             }, 500, 'swing');
         }
         
-        // zmiana wyglądu menu
-        if ($winScroll >= 150) {
-            $('nav').addClass('nav-scroll');
-        } else {
-            $('nav').removeClass('nav-scroll');
-        }
-        
         // efekt parallax
         $images.each(function() {
             $imgOffset = $(this).offset().top;
@@ -62,6 +64,11 @@
                 backgroundPosition: '50%' + ' ' + (Math.round(($imgOffset - $winScroll)*3/8)-120) + 'px'
             });
         }); 
+        
+        // zmiana wyglądu menu tylko na większych urządzeniach
+        if ($window.width() > 768) {
+            changeMenuStyle();
+        }
         
     }); // koniec - reakcje na przewijanie strony
     
@@ -96,6 +103,6 @@
         $logoSrc = (this.getAttribute('src')).slice(0,-5);
         $logoExt = (this.getAttribute('src')).substr(-4);
         this.setAttribute('src', $logoSrc + 'G' + $logoExt);
-    });
+    });    
     
 })();
