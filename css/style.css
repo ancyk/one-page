@@ -106,7 +106,7 @@ nav {
       nav .link-up div:hover {
         color: #D29E30;
         box-shadow: 0.05rem 0.1rem 0.3rem #393C45;
-        background-color: rgba(57, 60, 69, 0.9); }
+        background-color: rgba(57, 60, 69, 0.85); }
 
 .nav-scroll {
   height: 4.5rem;
@@ -130,13 +130,15 @@ nav {
 .content {
   padding: 5rem 10rem;
   line-height: 1.7rem;
-  text-align: justify; }
+  text-align: justify;
+  background-color: #FEFEFE; }
   .content h2 {
     font-size: 4rem;
     color: #D29E30;
     text-shadow: 0.05rem 0.1rem 0.3rem #393C45;
-    margin-bottom: 3rem;
-    margin-top: 2rem; }
+    line-height: 5rem;
+    margin-top: 1rem;
+    text-align: center; }
   .content p {
     margin-top: 1.5rem; }
 

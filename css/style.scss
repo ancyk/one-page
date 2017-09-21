@@ -65,7 +65,7 @@ nav {
             &:hover {
                 color: $yellow;
                 box-shadow: $shadow;
-                background-color: rgba($gray, 0.9);
+                background-color: rgba($gray, 0.85);
             }
         }
     }
@@ -97,12 +97,14 @@ nav {
     padding: 5rem 10rem;
     line-height: 1.7rem;
     text-align: justify;
+    background-color: $white;
     h2 {
         font-size: 4rem;
         color: $yellow;
         text-shadow: $shadow;
-        margin-bottom: 3rem;
-        margin-top: 2rem;
+        line-height: 5rem;
+        margin-top: 1rem;
+        text-align: center;
     }
     p {
         margin-top: 1.5rem;
@@ -123,7 +125,7 @@ nav {
 footer {
     padding-bottom: 3rem;
     background-color: $gray;
-    color: #FEFEFE;
+    color: $white;
     text-align: center;
     .div-flex {
         padding: 2rem 10rem 1rem 10rem;
