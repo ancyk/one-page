@@ -1,0 +1,108 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body, html {
+  font-family: "Raleway", sans-serif;
+  font-size: 18px; }
+
+.div-flex, nav .img-logo {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between; }
+
+.tlo1 {
+  background-image: url("../img/011.jpg"); }
+
+.tlo2 {
+  background-image: url("../img/02.jpg"); }
+
+.tlo3 {
+  background-image: url("../img/03.jpg"); }
+
+.tlo4 {
+  background-image: url("../img/04.jpg"); }
+
+.tlo5 {
+  background-image: url("../img/05.jpg"); }
+
+.parallax-lotus, .parallax {
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
+  max-height: 1000px;
+  min-height: 400px; }
+
+.parallax {
+  background-attachment: fixed; }
+
+nav {
+  height: 10.5rem;
+  width: 100%;
+  border-bottom: 1px solid #393C45;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 30%, rgba(255, 255, 255, 0.5) 45%, rgba(255, 255, 255, 0.2) 80%, rgba(255, 255, 255, 0.05) 100%);
+  position: fixed;
+  left: 0;
+  top: 0;
+  box-shadow: 0.1rem 0.1rem 0.3rem #393C45; }
+  nav .img-logo {
+    justify-content: flex-start; }
+    nav .img-logo img {
+      max-height: 6.5rem;
+      padding: 2rem .5rem;
+      opacity: 0.9; }
+      nav .img-logo img:first-child {
+        padding-left: 2rem; }
+  nav #menu-toggle {
+    display: none; }
+  nav .link-up {
+    text-decoration: none;
+    color: #393C45; }
+    nav .link-up div {
+      height: 100%;
+      box-sizing: border-box;
+      padding: 3rem 1.5rem;
+      text-align: center;
+      transition: all 500ms ease-in 50ms; }
+      nav .link-up div:hover {
+        color: #D29E30;
+        background-color: rgba(57, 60, 69, 0.9); }
+
+/*# sourceMappingURL=style.css.map */

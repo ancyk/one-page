@@ -1,0 +1,70 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+@import 'reset.scss';
+
+body, html {
+    font-family: $primary-font;
+    font-size: 18px;
+}
+.div-flex {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+// efekt parallax CSS
+.tlo1 { background-image: url('../img/011.jpg'); }
+.tlo2 { background-image: url('../img/02.jpg'); }
+.tlo3 { background-image: url('../img/03.jpg'); }
+.tlo4 { background-image: url('../img/04.jpg'); }
+.tlo5 { background-image: url('../img/05.jpg'); }
+.parallax-lotus {
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+    max-height: 1000px;
+    min-height: 400px;
+}
+.parallax {
+    @extend .parallax-lotus;
+    background-attachment: fixed;
+}
+
+// desktopowy pasek nawigacji - start
+nav {
+    height: 10.5rem;
+    width: 100%;
+    border-bottom: 1px solid $gray;
+    background: $gradient-menu;
+    position: fixed;
+    left: 0;
+    top: 0;
+    box-shadow: .1rem .1rem .3rem $gray;
+    .img-logo {
+        @extend .div-flex;
+        justify-content: flex-start;
+        img {
+            max-height: 6.5rem;
+            padding: 2rem .5rem;
+            opacity: 0.9;
+            &:first-child { padding-left: 2rem; }
+        }
+    }
+    #menu-toggle { display: none; }
+    .link-up {
+        text-decoration: none;
+        color: $gray;
+        div {
+            height: 100%;
+            box-sizing: border-box;
+            padding: 3rem 1.5rem;
+            text-align: center;
+            transition: all 500ms ease-in 50ms;
+            &:hover {
+                color: $yellow;
+                background-color: rgba($gray, 0.9);
+            }
+        }
+    }
+}
+
