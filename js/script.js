@@ -2,12 +2,22 @@
     var $window = $(window);
     var $images = $('.parallax');
     var $up = $('#btn-up');
-    var $winScroll, $imgOffset, $imgHeight;
+    var $winScroll, $imgOffset, $imgHeight, $number;
     
     // ustalenie rozmiaru pierwszego obrazka
-    $('.parallax-lotus').css({
-        backgroundPosition: '50% 50%',
-        height: $window.height()
+    // poprzez pobranie wysokości okna
+    function refreshImgHeight() {
+        $('.parallax-lotus').css({
+            backgroundPosition: '50% 50%',
+            height: $window.height()
+        });
+    }
+    refreshImgHeight();
+    
+    // zmiana wysokości obrazka przy
+    // każdej zmianie wielkości okna
+    $(window).on('resize', function() {
+        refreshImgHeight();
     });
     
     // reakcje na przewijanie strony
@@ -54,8 +64,22 @@
         }); 
         
     }); // koniec - reakcje na przewijanie strony
+    
+    // płynne przewijanie strony - wysuwany przycisk
+    $up.on('click', function(e) {
+        e.preventDefault();
+        $('body').animate({
+            scrollTop: 0
+        }, 1000, 'swing');
+    });
+
+    // płynne przewijanie strony - linki menu
+    $('[href^="#sec"]').on('click', function(e) {
+        e.preventDefault();
+        $number = (this.getAttribute('href')).substring(4,5);
+        $('body').animate({
+            scrollTop: $('#sec' + $number).offset().top
+        }, 1000, 'swing');
+    });
+    
 })();
-
-
-
-
