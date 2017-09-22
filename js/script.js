@@ -62,6 +62,8 @@
 
             if ($window.width() < 780) {
                 $(this).css('backgroundSize', '250%');
+            } else {
+                $(this).css('backgroundSize', 'cover');
             }
             
             $(this).css({
@@ -70,44 +72,54 @@
         });
     }
     
-    refreshImgHeight();
-    changeMenuStyle();
-    
     // urządzenia mobilne
-    if ($window.width() < 780) {
+    function mobileDevice() {
         var menuMobile = $('#menu-top');
         var menuItemBr = $('.link-up>div>br');
         var menuItemB = document.querySelectorAll('.link-up>div>b');
         
-        menuMobile.removeClass('div-flex');
-        $('nav').removeClass('div-flex');
-        menuMobile.hide();
-        menuItemBr.hide();
-        
-        for (var i = 0; i < menuItemB.length; i++) {
-            menuItemB[i].textContent += ' ';    
+        if ($window.width() <= 770) {
+            menuMobile.removeClass('div-flex');
+            $('nav').removeClass('div-flex');
+            menuMobile.hide();
+            menuItemBr.hide();
+
+            for (var i = 0; i < menuItemB.length; i++) {
+                menuItemB[i].textContent += ' ';    
+            }
+
+            $('#menu-toggle').on('click', function() {
+                menuMobile.slideToggle(); 
+            });
+
+            menuMobile.on('click', function() {
+                menuMobile.slideToggle();
+            });
+        } else {
+            menuMobile.addClass('div-flex');
+            $('nav').addClass('div-flex');
+            menuMobile.show();
+            menuItemBr.show();
         }
-        
-        $('#menu-toggle').on('click', function() {
-           menuMobile.slideToggle(); 
-        });
-        
-        menuMobile.on('click', function() {
-            menuMobile.slideToggle();
-        });
-    }
+    }  
+    
+    refreshImgHeight();
+    changeMenuStyle();
+    mobileDevice();
     
     // reakcja na zmianę rozmiaru okna
     $window.on('resize', function() {
         refreshImgHeight();
         changeMenuStyle();
-        activeElement(); 
+        activeElement();
+        parallaxEffect();
+        mobileDevice();
     });
     
     // reakcja na przewijanie strony
     $window.on('scroll', function() {
         $winScroll = $window.scrollTop();
-
+        
         changeMenuStyle();
         parallaxEffect();
         activeElement();
