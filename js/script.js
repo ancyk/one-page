@@ -2,7 +2,7 @@
     var $window = $(window);
     var $images = $('.parallax');
     var $up = $('#btn-up');
-    var $winScroll, $imgOffset, $imgHeight, $number;
+    var $winScroll, $imgOffset, $imgHeight, $number;  
     
     // ustalenie rozmiaru pierwszego obrazka
     // poprzez pobranie wysokości okna
@@ -59,6 +59,10 @@
         $images.each(function() {
             $imgOffset = $(this).offset().top;
             $imgHeight = $(this).height();
+
+            if ($window.width() < 780) {
+                $(this).css('backgroundSize', '250%');
+            }
             
             $(this).css({
                 backgroundPosition: '50%' + ' ' + (Math.round(($imgOffset - $winScroll)*3/8)-120) + 'px'
@@ -68,6 +72,30 @@
     
     refreshImgHeight();
     changeMenuStyle();
+    
+    // urządzenia mobilne
+    if ($window.width() < 780) {
+        var menuMobile = $('#menu-top');
+        var menuItemBr = $('.link-up>div>br');
+        var menuItemB = document.querySelectorAll('.link-up>div>b');
+        
+        menuMobile.removeClass('div-flex');
+        $('nav').removeClass('div-flex');
+        menuMobile.hide();
+        menuItemBr.hide();
+        
+        for (var i = 0; i < menuItemB.length; i++) {
+            menuItemB[i].textContent += ' ';    
+        }
+        
+        $('#menu-toggle').on('click', function() {
+           menuMobile.slideToggle(); 
+        });
+        
+        menuMobile.on('click', function() {
+            menuMobile.slideToggle();
+        });
+    }
     
     // reakcja na zmianę rozmiaru okna
     $window.on('resize', function() {
