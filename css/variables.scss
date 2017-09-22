@@ -12,3 +12,7 @@ $primary-font: 'Raleway', sans-serif;
 
 // efekt przejścia
 $transition: all 500ms ease-in 50ms;
+
+// urządzenia mobilne
+$tablet: "all and (max-width: 1050px)";
+$mobile: "all and (max-width: 780px)";

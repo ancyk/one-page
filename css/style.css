@@ -143,10 +143,12 @@ nav {
     margin-top: 1.5rem; }
 
 #btn-up {
+  transition: all 500ms ease-in 50ms;
   position: fixed;
   right: -10rem;
   bottom: 2rem; }
   #btn-up img {
+    transition: all 500ms ease-in 50ms;
     height: 4rem; }
 
 footer {
@@ -168,5 +170,24 @@ footer {
     line-height: 2rem;
     font-size: .9rem;
     font-weight: lighter; }
+
+@media all and (max-width: 1050px) {
+  #btn-up {
+    bottom: 1rem; }
+    #btn-up img {
+      height: 3rem;
+      opacity: 0.7; }
+
+  .content {
+    padding: 5rem 5rem; }
+    .content h2 {
+      font-size: 3rem;
+      line-height: 4rem; }
+    .content p {
+      margin-top: 1rem;
+      font-size: .9rem; }
+
+  footer .div-flex, footer nav .img-logo, nav footer .img-logo {
+    padding: 2rem 2rem 1rem 2rem; } }
 
 /*# sourceMappingURL=style.css.map */
