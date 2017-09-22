@@ -135,6 +135,7 @@ footer {
             text-decoration: none;
             color: inherit;
             font-size: 1.1rem;
+            line-height: 1.5rem;
             padding: 1rem;
             transition: $transition;
             &:hover {
@@ -146,6 +147,7 @@ footer {
         line-height: 2rem;
         font-size: .9rem;
         font-weight: lighter;
+        padding: 0 1rem;
     }
 }
 
@@ -175,3 +177,88 @@ footer {
         }
     }
 }
+
+// urządzenia mobilne - smartfon
+@media #{$mobile} {
+    #btn-up {
+        img {
+            height: 2.5rem;
+        }
+    }
+    .content {
+        padding: 3rem 4rem;
+        h2 {
+            font-size: 2.5rem;
+            line-height: 3.5rem;
+        }
+        p {
+            font-size: .8rem;
+            margin-top: .8rem;
+        }
+    }
+    footer {
+        padding-bottom: 2rem;
+        .div-flex {
+            padding: 1rem;
+            a {
+                line-height: 1rem;
+                font-size: .9rem;
+                padding: .5rem;
+            }
+        }
+    }
+    .nav-scroll {
+        height: 3.5rem;
+        box-sizing: border-box;
+        .img-logo {
+            img {
+                height: 2rem;
+                padding: .6rem .2rem;
+                &:first-child { padding-left: .7rem; }
+            }
+        }
+        #menu-toggle {
+            display: block !important;
+            width: 3.5rem;
+            heigth: 100%;
+            border: none;
+            background-color: $gray;
+            position: absolute;
+            top: 0;
+            right: 0;
+            span {
+                display: block;
+                background-color: $white;
+                height: .4rem;
+                width: 80%;
+                margin: .5rem auto;
+                border-radius: .3rem;
+            }
+        }
+        #menu-top {
+            width: 100%;
+            position: fixed;
+            left: 0;
+            top: 3.5rem;
+            div {
+                height: 3.5rem;
+                padding: 1.3rem;
+                display: block;
+                word-spacing: .2rem;
+                letter-spacing: .1rem;
+                background-color: rgba($gray, 0.95);
+                color: $white;
+                border-bottom: 1px solid rgba($white, 0.3);
+                &:hover {
+                    background: rgba($white, 0.9);
+                    color: $gray;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+

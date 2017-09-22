@@ -162,6 +162,7 @@ footer {
       text-decoration: none;
       color: inherit;
       font-size: 1.1rem;
+      line-height: 1.5rem;
       padding: 1rem;
       transition: all 500ms ease-in 50ms; }
       footer .div-flex a:hover, footer nav .img-logo a:hover, nav footer .img-logo a:hover {
@@ -169,7 +170,8 @@ footer {
   footer p {
     line-height: 2rem;
     font-size: .9rem;
-    font-weight: lighter; }
+    font-weight: lighter;
+    padding: 0 1rem; }
 
 @media all and (max-width: 1050px) {
   #btn-up {
@@ -189,5 +191,68 @@ footer {
 
   footer .div-flex, footer nav .img-logo, nav footer .img-logo {
     padding: 2rem 2rem 1rem 2rem; } }
+@media all and (max-width: 780px) {
+  #btn-up img {
+    height: 2.5rem; }
+
+  .content {
+    padding: 3rem 4rem; }
+    .content h2 {
+      font-size: 2.5rem;
+      line-height: 3.5rem; }
+    .content p {
+      font-size: .8rem;
+      margin-top: .8rem; }
+
+  footer {
+    padding-bottom: 2rem; }
+    footer .div-flex, footer nav .img-logo, nav footer .img-logo {
+      padding: 1rem; }
+      footer .div-flex a, footer nav .img-logo a, nav footer .img-logo a {
+        line-height: 1rem;
+        font-size: .9rem;
+        padding: .5rem; }
+
+  .nav-scroll {
+    height: 3.5rem;
+    box-sizing: border-box; }
+    .nav-scroll .img-logo img {
+      height: 2rem;
+      padding: .6rem .2rem; }
+      .nav-scroll .img-logo img:first-child {
+        padding-left: .7rem; }
+    .nav-scroll #menu-toggle {
+      display: block !important;
+      width: 3.5rem;
+      heigth: 100%;
+      border: none;
+      background-color: #393C45;
+      position: absolute;
+      top: 0;
+      right: 0; }
+      .nav-scroll #menu-toggle span {
+        display: block;
+        background-color: #FEFEFE;
+        height: .4rem;
+        width: 80%;
+        margin: .5rem auto;
+        border-radius: .3rem; }
+    .nav-scroll #menu-top {
+      width: 100%;
+      position: fixed;
+      left: 0;
+      top: 3.5rem; }
+      .nav-scroll #menu-top div {
+        height: 3.5rem;
+        padding: 1.3rem;
+        display: block;
+        word-spacing: .2rem;
+        letter-spacing: .1rem;
+        background-color: rgba(57, 60, 69, 0.95);
+        color: #FEFEFE;
+        border-bottom: 1px solid rgba(254, 254, 254, 0.3); }
+        .nav-scroll #menu-top div:hover {
+          background: rgba(254, 254, 254, 0.9);
+          color: #393C45; } }
 
 /*# sourceMappingURL=style.css.map */
