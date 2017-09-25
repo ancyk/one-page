@@ -166,7 +166,7 @@
     // płynne przewijanie strony - wysuwany przycisk
     $up.on('click', function(e) {
         e.preventDefault();
-        $('body').animate({
+        $('html').animate({
             scrollTop: 0
         }, 1000, 'swing');
     });
@@ -175,7 +175,7 @@
     $('[href^="#sec"]').on('click', function(e) {
         e.preventDefault();
         $number = (this.getAttribute('href')).substring(4,5);
-        $('body').animate({
+        $('html').animate({
             scrollTop: $('#sec' + $number).offset().top
         }, 1000, 'swing');
     });
