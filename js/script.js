@@ -2,7 +2,10 @@
     var $window = $(window);
     var $images = $('.parallax');
     var $up = $('#btn-up');
-    var $winScroll, $imgOffset, $imgHeight, $number;  
+    var $winScroll, $imgOffset, $imgHeight, $number; 
+    var menuMobile = $('#menu-top');
+    var menuItemBr = $('.link-up>div>br');
+    var menuItemB = document.querySelectorAll('.link-up>div>b');
     
     // ustalenie rozmiaru pierwszego obrazka
     // poprzez pobranie wysokości okna
@@ -33,15 +36,21 @@
     }
     
     // wysuwany przycisk
-    function slideButton(rems) {
+    function slideButton() {
         if ($winScroll >= 400) {
-            $up.animate({
-                right: rems + 'rem'
-            }, 500, 'swing');
+            if ($window.width() > 1035) {
+                $up.animate({
+                    right: '36px'
+                }, 250, 'swing');
+            } else if ($window.width() <= 1035) {
+                $up.animate({
+                    right: '18px'
+                }, 250, 'swing');
+            }
         } else {
             $up.stop(true).animate({
-                right: '-10rem'
-            }, 500, 'swing');
+                right: '-100px'
+            }, 250, 'swing');
         }
     }
     
@@ -51,7 +60,7 @@
             $('nav').addClass('nav-scroll');
         } else {
             $('nav').removeClass('nav-scroll');
-        }
+        } 
     }
     
     // efekt parallax
@@ -74,10 +83,6 @@
     
     // urządzenia mobilne
     function mobileDevice() {
-        var menuMobile = $('#menu-top');
-        var menuItemBr = $('.link-up>div>br');
-        var menuItemB = document.querySelectorAll('.link-up>div>b');
-        
         if ($window.width() <= 770) {
             menuMobile.removeClass('div-flex');
             $('nav').removeClass('div-flex');
@@ -89,18 +94,18 @@
             }
 
             $('#menu-toggle').on('click', function() {
-                menuMobile.slideToggle(); 
-            });
-
-            menuMobile.on('click', function() {
                 menuMobile.slideToggle();
             });
-        } else {
+            
+            menuMobile.on('click', function() {
+                menuMobile.slideUp();
+            });
+        } /*else {
             menuMobile.addClass('div-flex');
             $('nav').addClass('div-flex');
             menuMobile.show();
             menuItemBr.show();
-        }
+        }*/
     }  
     
     refreshImgHeight();
@@ -113,7 +118,8 @@
         changeMenuStyle();
         activeElement();
         parallaxEffect();
-        mobileDevice();
+        //mobileDevice();
+        slideButton();
     });
     
     // reakcja na przewijanie strony
@@ -123,9 +129,7 @@
         changeMenuStyle();
         parallaxEffect();
         activeElement();
-        
-        if ($window.width() > 1035) slideButton('2');
-        else slideButton('1');
+        slideButton();
     });
     
     // płynne przewijanie strony - wysuwany przycisk
