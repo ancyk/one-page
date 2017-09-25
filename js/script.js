@@ -6,6 +6,7 @@
     var menuMobile = $('#menu-top');
     var menuItemBr = $('.link-up>div>br');
     var menuItemB = document.querySelectorAll('.link-up>div>b');
+    var content = $('.content');
     
     // ustalenie rozmiaru pierwszego obrazka
     // poprzez pobranie wysokości okna
@@ -108,6 +109,35 @@
         }*/
     }  
     
+    // wsuwany tekst
+    function slideContent() {
+        for (var i = 1; i <= content.length; i++) {
+            if (i == 1) {
+                if ($winScroll > ($('.tlo' + i).offset().top + 150)) { 
+                    $('#sec' + i + '>.content>h2').animate({
+                        right: '0px'
+                    }, 400, 'swing');
+                }
+                if ($winScroll > ($('.tlo' + i).offset().top + 300)) {
+                    $('#sec' + i + '>.content>p').animate({
+                        right: '0px'
+                    }, 600, 'swing');
+                }
+            } else {
+                if ($winScroll > ($('.tlo' + i).offset().top)) { 
+                    $('#sec' + i + '>.content>h2').animate({
+                        right: '0px'
+                    }, 400, 'swing');
+                }
+                if ($winScroll > ($('.tlo' + i).offset().top + 150)) {
+                    $('#sec' + i + '>.content>p').animate({
+                        right: '0px'
+                    }, 600, 'swing');
+                }
+            }  
+        }   
+    }
+    
     refreshImgHeight();
     changeMenuStyle();
     mobileDevice();
@@ -130,6 +160,7 @@
         parallaxEffect();
         activeElement();
         slideButton();
+        slideContent();
     });
     
     // płynne przewijanie strony - wysuwany przycisk

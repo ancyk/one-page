@@ -81,6 +81,7 @@ nav {
   position: fixed;
   left: 0;
   top: 0;
+  z-index: 100;
   box-shadow: 0.05rem 0.1rem 0.3rem #393C45;
   transition: all 500ms ease-in 50ms; }
   nav .img-logo {
@@ -138,9 +139,13 @@ nav {
     text-shadow: 0.05rem 0.1rem 0.3rem #393C45;
     line-height: 5rem;
     margin-top: 1rem;
-    text-align: center; }
+    text-align: center;
+    position: relative;
+    right: 2000px; }
   .content p {
-    margin-top: 1.5rem; }
+    margin-top: 1.5rem;
+    position: relative;
+    right: 2000px; }
 
 #btn-up {
   transition: all 500ms ease-in 50ms;
